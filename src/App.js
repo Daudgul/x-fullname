@@ -4,7 +4,9 @@ import React, { useState } from "react";
 function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [fullName, setFullName] = useState([]);
+  const [fullName, setFullName] = useState(
+    JSON.parse(sessionStorage.getItem("myArray")) || []
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +16,7 @@ function App() {
         full: `${firstName} ${lastName}`,
       },
     ]);
+    sessionStorage.setItem("myArray", JSON.stringify(fullName));
     setFirstName("");
     setLastName("");
   };
