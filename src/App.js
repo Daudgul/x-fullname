@@ -25,8 +25,8 @@ function App() {
         },
       ])
     );
-    setFirstName("");
-    setLastName("");
+    // setFirstName("");
+    // setLastName("");
   };
 
   return (
