@@ -16,7 +16,15 @@ function App() {
         full: `${firstName} ${lastName}`,
       },
     ]);
-    sessionStorage.setItem("myArray", JSON.stringify(fullName));
+    sessionStorage.setItem(
+      "myArray",
+      JSON.stringify([
+        ...fullName,
+        {
+          full: `${firstName} ${lastName}`,
+        },
+      ])
+    );
     setFirstName("");
     setLastName("");
   };
